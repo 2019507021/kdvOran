@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class kdv {
+    public static void main(String[] args) {
+
+        // eğer girilen tutar 0 ve 1000 tl arasında ise kdv oranı %18, 1000 tl den büyük ise kdv oranı %8
+        //olarak kdv tutarı hesaplayan programı yazınız.
+
+        double tutar, kdvOran1= 0.18, kdvOran2 = 0.08,kdvTutar,kdvlitutar;
+        Scanner inp = new Scanner(System.in);
+        System.out.print("kdv siz tutar:");
+        tutar = inp.nextDouble();
+
+        kdvTutar = tutar >= 0 && tutar <= 1000 ? (tutar*kdvOran1):(tutar*kdvOran2);
+        kdvlitutar = tutar >= 0 && tutar <= 1000 ? ( tutar*kdvOran1) + tutar : (tutar*kdvOran2) + tutar;
+
+        System.out.println("ürünün kdv siz tutarı: " + tutar);
+        String kdvOran3 = ((tutar >= 0) && (tutar <= 1000) ? "Kdv orani = 18%" : "kdv orani = 8%");
+        System.out.println(kdvOran3);
+        System.out.println("Kdv tutarı:" + kdvTutar);
+        System.out.println("ürünün kdvli tutarı: " + kdvlitutar);
+    }
+}
